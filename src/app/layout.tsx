@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+       <body className={inter.className}>
+        <Navbar />
+        <main>{children}</main>
+        <footer className="bg-gray-800 text-white py-12">
+          {/* Footer content will go here */}
+          <div className="container mx-auto px-4">
+            <p className="text-center">© 2025 BravArt. Toate drepturile rezervate.</p>
+          </div>
+        </footer>
       </body>
     </html>
   );

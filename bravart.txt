@@ -1,0 +1,115 @@
+# BravArt - Website Documentation
+
+## Tehnologii
+- **Frontend**: Next.js, Tailwind CSS, Framer Motion (pentru animații)
+- **Backend**: Shopify (pentru gestionarea produselor, plăți și checkout)
+- **Dashboard**: Integrare cu Shopify pentru administrarea produselor
+
+## Informații Generale
+- **Numele site-ului**: BravArt
+- **Motto**: "BRAVART – Partenerul tău pentru ordine, ritm și eficiență"
+- **Cuvinte cheie**: organizare, curățenie și protocol, papetărie, cadouri business
+- **Descriere scurtă**: BRAVART este partenerul tău de încredere în papetărie, birotică, curățenie și cadouri business. Oferim produse esențiale pentru birou, școală sau uz casnic: de la hârtie, instrumente de scris și rechizite, până la soluții de organizare, protocol și cadouri personalizate. Livrăm soluții utile și fiabile, la momentul potrivit.
+
+## Structura Site-ului
+
+### Pagini Principale
+1. **Pagina Principală (Home)**
+   - Motto și mesaj introductiv vizibil
+   - Secțiuni pentru categorii principale
+   - Evidențierea secțiunii AI Giftistry
+   - Produse populare/recomandate
+
+2. **Despre Noi**
+   - Descrierea companiei
+   - Valori și misiune
+   - Istoric
+
+3. **Pagină Contact**
+   - Email, număr telefon
+   - Linkuri către social media (Instagram, Facebook, TikTok)
+   - Formular de contact
+
+4. **Testimoniale/Feedback Clienți**
+   - Recenzii și evaluări
+   - Studii de caz
+
+5. **Blog (opțional)**
+   - Articole despre produse
+   - Sfaturi și recomandări
+
+### Categorii de Produse
+
+1. **HÂRTIE, PRODUSE DIN HÂRTIE**
+   - Subcategorii: Hârtie toate dimensiunile, Hârtie colorată, Hârtie foto, Registre, Tipizate, Plicuri, Etichete, Caiete, Agende, etc.
+
+2. **BIROU, ORGANIZARE ȘI ARHIVARE**
+   - Subcategorii: Bibliorafturi, Cutii arhivare, Dosare, Folii, Mape, Serviete, Capsatoare, Perforatoare, etc.
+
+3. **AFIȘARE ȘI PREZENTARE**
+   - Subcategorii: Plută, Whiteboard, Table, Flipchart, Ecusoane, Hărți, Roll-up, etc.
+
+4. **INSTRUMENTE DE SCRIS**
+   - Subcategorii: Pixuri, Markere, Stilouri, Creioane, Linere, Produse artă, etc.
+
+5. **ACCESORII IT**
+   - Subcategorii: Genți laptop, Stick-uri USB, Carduri memorie, CD/DVD, Periferice, etc.
+
+6. **CURĂȚENIE ȘI PROTOCOL**
+   - Subcategorii: Prosoape hârtie, Hârtie igienică, Șervețele, Săpunuri, Detergenți, Dezinfectanți, etc.
+
+7. **RECHIZITE ȘCOLARE**
+   - Subcategorii: Ghiozdane, Caiete, Creioane, Carioci, Acuarele, Penare, etc.
+
+8. **CADOURI**
+   - Cadouri business
+   - Jucării
+
+9. **AI GIFTISTRY (secțiune specială, evidențiată)**
+   - Design special cu logo/banner la partea superioară a secțiunii
+   - Produse: Agende, Felicitări, Semne de carte, Postere, Etichete, Totebags, Huse telefon, Tricouri, Căni, etc.
+   - Funcționalitate specială: generator de imagini AI pe șabloane predefinite
+   - Integrare cu API-uri precum OpenAI DALL-E, Stability AI sau Replicate
+
+### Filtrare după Branduri
+- PARKER
+- DACO
+- HERLITZ
+- Alte branduri
+
+## Funcționalități Tehnice
+
+1. **Integrare Shopify**
+   - Gestionare produse
+   - Sistem de plăți
+   - Checkout
+
+2. **Funcționalitate AI Giftistry**
+   - Generator de imagini personalizate folosind AI
+   - Șabloane predefinite pentru diverse produse
+   - Personalizare cu fețe/elemente specifice utilizatorului
+   - Sistem de plată per imagine generată
+
+3. **Responsive Design**
+   - Adaptare pentru dispozitive mobile, tablete și desktop
+   - Animații subtile cu Framer Motion
+
+4. **Performanță și SEO**
+   - Optimizare pentru motoarele de căutare
+   - Încărcare rapidă a paginilor cu Next.js
+
+5. **Coș de cumpărături și Checkout**
+   - Proces simplificat
+   - Opțiuni de livrare
+   - Metode de plată diverse
+
+6. **Cont utilizator**
+   - Istoric comenzi
+   - Adrese salvate
+   - Preferințe
+
+7. **Filtrare și căutare avansată**
+   - După categorie, brand, preț, etc.
+   - Căutare cu sugestii
+
+*Această structură poate fi implementată modular, începând cu funcționalitățile esențiale și adăugând treptat caracteristici avansate precum generatorul AI pentru personalizarea produselor.*

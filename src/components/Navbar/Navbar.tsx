@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { categories } from "./data/categories";
-import TopBar from "./components/TopBar/TopBar";
+// import TopBar from "./components/TopBar/TopBar";
 import Logo from "./components/Logo/Logo";
 import DesktopNavigation from "./components/DesktopNavigation/DesktopNavigation";
 import UserActions from "./components/UserActions/UserActions";
@@ -65,7 +65,7 @@ const Navbar = () => {
       role="navigation"
       aria-label="Main navigation"
     >
-      <TopBar />
+     {/* <TopBar /> */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Logo />

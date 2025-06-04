@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { FiPhone, FiMail, FiChevronRight } from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { categories } from "../Navbar/data/categories";
 import logo from "../../../public/next.svg";
@@ -25,15 +25,28 @@ const Footer = () => {
 
   const legalLinks = ["Termeni", "Confidențialitate", "Cookies"];
   
+  // Wave divider SVG for modern look
+  const WaveDivider = () => (
+    <div className="w-full overflow-hidden leading-[0] rotate-180">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[20px]">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+              className="fill-indigo-50/80"></path>
+      </svg>
+    </div>
+  );
+
   return (
-    <footer className="bg-gradient-to-r from-indigo-50 to-blue-50 shadow-inner border-t border-indigo-100">
+    <footer className="bg-gradient-to-r from-indigo-50 to-blue-50 shadow-inner">
+      {/* Wave divider for modern look */}
+      <WaveDivider />
+      
       {/* Main footer content */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex flex-wrap justify-between gap-4">
-          {/* Company info and branding - more compact */}
-          <div className="w-full md:w-1/4">
-            <div className="flex items-center mb-2">
-              <div className="h-6 w-6 relative mr-2 bg-white rounded-full shadow-sm overflow-hidden">
+      <div className="container mx-auto px-4 py-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
+          {/* Company info and branding */}
+          <div className="md:col-span-4">
+            <div className="flex items-center mb-3 group">
+              <div className="h-6 w-6 relative mr-2 bg-white rounded-full shadow-md overflow-hidden group-hover:shadow-lg transition-all duration-300">
                 <Image src={logo} alt="BravArt Logo" fill className="object-contain p-1" />
               </div>
               <span className="text-base font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">
@@ -45,32 +58,44 @@ const Footer = () => {
               Partenerul tău pentru ordine, ritm și eficiență în papetărie și birotică.
             </p>
             
-            {/* Contact info - inline for space saving */}
-            <div className="flex items-center gap-4 text-xs text-gray-600">
-              <div className="flex items-center">
-                <FiPhone size={12} className="text-indigo-500 mr-1" />
-                <span>072 123 123</span>
+            {/* Contact info with improved styling */}
+            <div className="space-y-1">
+              <div className="flex items-center group">
+                <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-2 group-hover:bg-indigo-200 transition-colors">
+                  <FiPhone size={12} className="text-indigo-600" />
+                </div>
+                <span className="text-xs text-gray-600 group-hover:text-indigo-600 transition-colors">072 123 123</span>
               </div>
-              <div className="flex items-center">
-                <FiMail size={12} className="text-indigo-500 mr-1" />
-                <span>contact@bravart.ro</span>
+              
+              <div className="flex items-center group">
+                <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-2 group-hover:bg-indigo-200 transition-colors">
+                  <FiMail size={12} className="text-indigo-600" />
+                </div>
+                <span className="text-xs text-gray-600 group-hover:text-indigo-600 transition-colors">contact@bravart.ro</span>
+              </div>
+              
+              <div className="flex items-center group">
+                <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-2 group-hover:bg-indigo-200 transition-colors">
+                  <FiMapPin size={12} className="text-indigo-600" />
+                </div>
+                <span className="text-xs text-gray-600 group-hover:text-indigo-600 transition-colors">București, România</span>
               </div>
             </div>
           </div>
 
-          {/* Quick links - two columns with less spacing */}
-          <div className="w-full md:w-2/5 flex flex-wrap">
+          {/* Quick links with better spacing and hover effects */}
+          <div className="md:col-span-5 grid grid-cols-2 gap-2">
             {/* Main categories */}
-            <div className="w-1/2">
-              <h4 className="text-xs font-semibold text-indigo-700 mb-2">Categorii populare</h4>
+            <div>
+              <h4 className="text-xs font-semibold text-indigo-700 mb-2 pb-1 border-b border-indigo-100">Categorii populare</h4>
               <ul className="space-y-1">
                 {categories[0].subcategories.slice(0, 3).map((cat) => (
                   <li key={cat.slug}>
                     <Link 
                       href={`/category/${cat.slug}`} 
-                      className="text-xs text-gray-600 hover:text-indigo-600 transition-colors flex items-center"
+                      className="text-sm text-gray-600 hover:text-indigo-600 transition-all flex items-center group"
                     >
-                      <FiChevronRight size={10} className="text-indigo-400 mr-1" />
+                      <span className="w-0 h-[1px] bg-indigo-600 mr-0 group-hover:w-2 group-hover:mr-2 transition-all duration-300"></span>
                       {cat.name.length > 15 ? `${cat.name.substring(0, 15)}...` : cat.name}
                     </Link>
                   </li>
@@ -78,9 +103,9 @@ const Footer = () => {
                 <li>
                   <Link 
                     href="/categories" 
-                    className="text-xs font-medium text-indigo-600 hover:text-indigo-800 transition-colors flex items-center"
+                    className="text-xs font-medium text-indigo-600 hover:text-indigo-800 transition-all flex items-center group"
                   >
-                    <FiChevronRight size={10} className="mr-1" />
+                    <span className="w-0 h-[1px] bg-indigo-600 mr-0 group-hover:w-2 group-hover:mr-2 transition-all duration-300"></span>
                     Vezi toate
                   </Link>
                 </li>
@@ -88,16 +113,16 @@ const Footer = () => {
             </div>
             
             {/* Company and support links */}
-            <div className="w-1/2">
-              <h4 className="text-xs font-semibold text-indigo-700 mb-2">Informații utile</h4>
+            <div>
+              <h4 className="text-xs font-semibold text-indigo-700 mb-2 pb-1 border-b border-indigo-100">Informații utile</h4>
               <ul className="space-y-1">
-                {quickLinks.slice(0, 4).map((link) => (
+                {quickLinks.map((link) => (
                   <li key={link.href}>
                     <Link 
                       href={link.href} 
-                      className="text-xs text-gray-600 hover:text-indigo-600 transition-colors flex items-center"
+                      className="text-sm text-gray-600 hover:text-indigo-600 transition-all flex items-center group"
                     >
-                      <FiChevronRight size={10} className="text-indigo-400 mr-1" />
+                      <span className="w-0 h-[1px] bg-indigo-600 mr-0 group-hover:w-2 group-hover:mr-2 transition-all duration-300"></span>
                       {link.label}
                     </Link>
                   </li>
@@ -106,18 +131,18 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social media - more compact */}
-          <div className="w-full md:w-1/4">
-            <h4 className="text-xs font-semibold text-indigo-700 mb-2">Urmărește-ne</h4>
-            <div className="flex space-x-2">
+          {/* Social media */}
+          <div className="md:col-span-3">
+            <h4 className="text-xs font-semibold text-indigo-700 mb-2 pb-1 border-b border-indigo-100">Urmărește-ne</h4>
+            <div className="flex space-x-2 mt-2">
               {socials.map((social, idx) => (
                 <a 
                   key={idx}
                   href={social.href}
                   aria-label={`Follow us on ${social.Icon.name}`}
-                  className={`w-7 h-7 bg-white ${social.hoverClass} flex items-center justify-center rounded-full transition-all duration-200 shadow-sm hover:shadow-md border border-gray-100`}
+                  className={`w-7 h-7 bg-white ${social.hoverClass} flex items-center justify-center rounded-full transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100 group`}
                 >
-                  <social.Icon size={14} className="text-indigo-600 hover:text-white transition-colors" />
+                  <social.Icon size={14} className="text-indigo-600 group-hover:text-white transition-colors" />
                 </a>
               ))}
             </div>
@@ -125,11 +150,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom bar with copyright - more compact */}
-      <div className="border-t border-indigo-100 bg-white/80">
+      {/* Bottom bar with copyright and legal links */}
+      <div className="border-t border-indigo-100 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-gray-500 mb-1 md:mb-0">
-            © {currentYear} BravArt • Toate drepturile rezervate
+            © {currentYear} <span className="font-medium text-indigo-600">BravArt</span> • Toate drepturile rezervate
           </p>
           
           <div className="flex items-center gap-x-4">

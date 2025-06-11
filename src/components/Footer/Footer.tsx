@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import { categories } from "../Navbar/data/categories";
 import logo from "../../../public/next.svg";
 
@@ -10,9 +10,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socials = [
-    { Icon: FaFacebookF, href: "https://facebook.com", hoverClass: "hover:bg-blue-600" },
-    { Icon: FaInstagram, href: "https://instagram.com", hoverClass: "hover:bg-pink-600" },
-    { Icon: FaTiktok, href: "https://tiktok.com", hoverClass: "hover:bg-black" }
+    { Icon: FaFacebookF, href: "https://facebook.com", hoverClass: "hover:bg-blue-600", color: "#1877F2" },
+    { Icon: FaInstagram, href: "https://instagram.com", hoverClass: "hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-600 hover:to-orange-500", color: "#E4405F" },
+    { Icon: FaTiktok, href: "https://tiktok.com", hoverClass: "hover:bg-black", color: "#000000" },
+    { Icon: FaYoutube, href: "https://youtube.com", hoverClass: "hover:bg-red-600", color: "#FF0000" },
+    { Icon: FaLinkedinIn, href: "https://linkedin.com", hoverClass: "hover:bg-blue-700", color: "#0A66C2" }
   ];
   
   const quickLinks = [
@@ -131,20 +133,32 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social media */}
+          {/* Social media - enhanced */}
           <div className="md:col-span-3">
             <h4 className="text-xs font-semibold text-indigo-700 mb-2 pb-1 border-b border-indigo-100">Urmărește-ne</h4>
-            <div className="flex space-x-2 mt-2">
-              {socials.map((social, idx) => (
-                <a 
-                  key={idx}
-                  href={social.href}
-                  aria-label={`Follow us on ${social.Icon.name}`}
-                  className={`w-7 h-7 bg-white ${social.hoverClass} flex items-center justify-center rounded-full transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100 group`}
-                >
-                  <social.Icon size={14} className="text-indigo-600 group-hover:text-white transition-colors" />
-                </a>
-              ))}
+            <div className="mt-2 bg-gradient-to-r from-indigo-50/50 to-blue-50/50 p-2 rounded-lg border border-indigo-100/50 shadow-inner">
+              <p className="text-xs text-gray-500 mb-2">Fii la curent cu noutățile noastre</p>
+              <div className="flex flex-wrap gap-2">
+                {socials.map((social, idx) => (
+                  <a 
+                    key={idx}
+                    href={social.href}
+                    aria-label={`Follow us on ${social.Icon.name}`}
+                    className={`w-7 h-7 bg-white ${social.hoverClass} flex items-center justify-center rounded-md transition-all duration-300 shadow-sm hover:shadow hover:scale-105 border border-gray-100 group overflow-hidden relative`}
+                    style={{ background: `linear-gradient(135deg, white 50%, ${social.color}20 100%)` }}
+                  >
+                    <social.Icon 
+                      size={14} 
+                      className="text-indigo-600 group-hover:text-white transition-colors relative z-10" 
+                    />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                         style={{ background: social.color }}></div>
+                  </a>
+                ))}
+              </div>
+              <div className="mt-2 text-center">
+                <span className="text-[10px] text-gray-400 italic">Alătură-te comunității noastre</span>
+              </div>
             </div>
           </div>
         </div>

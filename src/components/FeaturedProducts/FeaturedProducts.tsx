@@ -113,15 +113,32 @@ const FeaturedProducts = () => {
   });
   
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-indigo-50/30">
+    <section className="py-16 bg-gradient-to-b from-white to-indigo-50/30 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-40 right-0 w-80 h-80 rounded-full bg-indigo-100/40 blur-3xl"></div>
+      <div className="absolute bottom-20 left-0 w-72 h-72 rounded-full bg-blue-100/40 blur-3xl"></div>
+      
+      {/* Decorative pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-grid-indigo-500/[0.05] bg-[size:20px_20px]"></div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <motion.span
+            className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Cele mai căutate
+          </motion.span>
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             Produse <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">Populare</span>
           </motion.h2>
@@ -137,8 +154,8 @@ const FeaturedProducts = () => {
         </div>
         
         {/* Filter tabs */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex bg-white rounded-full shadow-md p-1">
+        <div className="flex justify-center mb-10 relative z-10">
+          <div className="inline-flex bg-white rounded-full shadow-lg p-1 border border-gray-100">
             {tabs.map(tab => (
               <button
                 key={tab.id}
@@ -156,18 +173,21 @@ const FeaturedProducts = () => {
         </div>
         
         {/* Products grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
           {filteredProducts.map((product, index) => (
             <motion.div
               key={product.id}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-indigo-100 hover:-translate-y-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Product image */}
-              <div className="relative h-48 bg-indigo-50 overflow-hidden group">
+              <div className="relative h-48 bg-gradient-to-br from-indigo-50 to-blue-50/50 overflow-hidden group">
+                {/* Decorative elements */}
+                <div className="absolute -top-10 -right-10 w-20 h-20 bg-indigo-200/20 rounded-full blur-md group-hover:bg-indigo-200/30 transition-all duration-500"></div>
+                <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-blue-200/20 rounded-full blur-md group-hover:bg-blue-200/30 transition-all duration-500"></div>
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -178,19 +198,19 @@ const FeaturedProducts = () => {
                 {/* Badges */}
                 <div className="absolute top-2 left-2 flex flex-col gap-2">
                   {product.isNew && (
-                    <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-md">
+                    <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">
                       Nou
                     </span>
                   )}
                   {product.isBestseller && (
-                    <span className="bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-md">
+                    <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">
                       Bestseller
                     </span>
                   )}
                 </div>
                 
                 {/* Quick actions */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 backdrop-blur-sm">
                   <div className="flex justify-center gap-2">
                     <button 
                       className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-indigo-100 transition-colors"
@@ -216,7 +236,7 @@ const FeaturedProducts = () => {
               {/* Product info */}
               <div className="p-4">
                 <Link href={`/product/${product.id}`}>
-                  <h3 className="font-medium text-gray-900 mb-1 hover:text-indigo-600 transition-colors">
+                  <h3 className="font-medium text-gray-900 mb-1 hover:text-indigo-600 transition-colors group-hover:text-indigo-600">
                     {product.name}
                   </h3>
                 </Link>
@@ -241,9 +261,9 @@ const FeaturedProducts = () => {
                 
                 {/* Price and add to cart */}
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-indigo-600">{product.price.toFixed(2)} lei</span>
+                  <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">{product.price.toFixed(2)} lei</span>
                   <button 
-                    className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all"
+                    className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-all hover:scale-110 shadow-sm"
                     aria-label="Add to cart"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -260,12 +280,15 @@ const FeaturedProducts = () => {
         <div className="text-center mt-12">
           <Link 
             href="/products"
-            className="inline-flex items-center px-6 py-3 rounded-full border-2 border-indigo-600 text-indigo-600 font-medium transition-all hover:bg-indigo-600 hover:text-white"
+            className="inline-flex items-center px-6 py-3 rounded-full border-2 border-indigo-600 text-indigo-600 font-medium transition-all hover:bg-indigo-600 hover:text-white hover:shadow-lg hover:shadow-indigo-100 relative overflow-hidden group"
           >
-            Vezi toate produsele
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
+            <span className="absolute inset-0 w-0 bg-indigo-600 transition-all duration-500 ease-out group-hover:w-full opacity-80"></span>
+            <span className="relative flex items-center">
+              Vezi toate produsele
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </span>
           </Link>
         </div>
       </div>

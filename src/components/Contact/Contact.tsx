@@ -52,15 +52,32 @@ const Contact = () => {
   };
   
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-indigo-50/30">
+    <section className="py-16 bg-gradient-to-b from-white to-indigo-50/30 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-20 left-0 w-64 h-64 rounded-full bg-indigo-100 opacity-50 blur-3xl"></div>
+      <div className="absolute bottom-20 right-0 w-80 h-80 rounded-full bg-blue-100 opacity-50 blur-3xl"></div>
+      
+      {/* Decorative pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-grid-indigo-500/[0.05] bg-[size:20px_20px]"></div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <motion.span
+            className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Suntem aici pentru tine
+          </motion.span>
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             Contactează-<span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">ne</span>
           </motion.h2>
@@ -75,7 +92,7 @@ const Contact = () => {
           </motion.p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -83,7 +100,10 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-800">Informații de Contact</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-800 relative inline-block">
+              <span className="relative z-10">Informații de Contact</span>
+              <span className="absolute bottom-0 left-0 w-full h-3 bg-indigo-100 -z-10"></span>
+            </h3>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -125,7 +145,10 @@ const Contact = () => {
             </div>
             
             <div className="mt-10">
-              <h3 className="text-xl font-bold mb-4 text-gray-800">Urmărește-ne</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-800 relative inline-block">
+                <span className="relative z-10">Urmărește-ne</span>
+                <span className="absolute bottom-0 left-0 w-full h-2 bg-indigo-100 -z-10"></span>
+              </h3>
               <div className="flex space-x-4">
                 <a 
                   href="https://instagram.com" 
@@ -168,8 +191,11 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Trimite-ne un mesaj</h3>
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-xl border border-gray-100 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-6 text-gray-800 relative inline-block">
+                <span className="relative z-10">Trimite-ne un mesaj</span>
+                <span className="absolute bottom-0 left-0 w-full h-3 bg-indigo-100 -z-10"></span>
+              </h3>
               
               {formStatus.submitted && (
                 <div className={`mb-6 p-4 rounded-lg ${formStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
@@ -235,7 +261,7 @@ const Contact = () => {
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-medium py-3 px-6 rounded-lg hover:shadow-lg transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 relative overflow-hidden group"
                 >
                   Trimite mesajul
                 </button>

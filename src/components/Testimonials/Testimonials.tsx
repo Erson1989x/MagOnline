@@ -88,15 +88,27 @@ const Testimonials = () => {
   };
   
   return (
-    <section className="py-16 bg-gradient-to-b from-indigo-50/30 to-white">
+    <section className="py-16 bg-gradient-to-b from-indigo-50/30 to-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-blue-100/50 blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-64 h-64 rounded-full bg-indigo-100/50 blur-3xl"></div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <motion.span
+            className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Experiențe Reale
+          </motion.span>
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             Ce Spun <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">Clienții Noștri</span>
           </motion.h2>
@@ -112,7 +124,7 @@ const Testimonials = () => {
         </div>
         
         {/* Testimonials carousel */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto z-10">
           {/* Decorative elements */}
           <div className="absolute -top-6 -left-6 w-12 h-12 text-indigo-600 opacity-20">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -127,7 +139,18 @@ const Testimonials = () => {
           </div>
           
           {/* Carousel */}
-          <div className="relative bg-white rounded-2xl shadow-xl p-6 md:p-10 overflow-hidden">
+          <div className="relative bg-white rounded-2xl shadow-xl p-6 md:p-10 overflow-hidden border border-gray-100">
+            {/* Decorative quote marks */}
+            <div className="absolute top-0 left-0 w-24 h-24 text-indigo-100 transform -translate-x-1/3 -translate-y-1/3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            <div className="absolute bottom-0 right-0 w-24 h-24 text-indigo-100 transform translate-x-1/3 translate-y-1/3 rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
             <div className="relative h-[300px] md:h-[250px]">
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -143,7 +166,7 @@ const Testimonials = () => {
                 >
                   {/* Client image */}
                   <div className="w-full md:w-1/4 mb-6 md:mb-0 flex justify-center">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-indigo-100">
+                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg transform hover:scale-105 transition-transform duration-300">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -169,7 +192,11 @@ const Testimonials = () => {
                       ))}
                     </div>
                     
-                    <p className="text-gray-600 italic mb-4">&ldquo;{testimonial.content}&rdquo;</p>
+                    <p className="text-gray-600 italic mb-4 relative">
+                      <span className="text-indigo-400 text-3xl absolute -left-2 -top-2">&ldquo;</span>
+                      {testimonial.content}
+                      <span className="text-indigo-400 text-3xl absolute -right-1 -bottom-2">&rdquo;</span>
+                    </p>
                     
                     <div>
                       <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
@@ -204,20 +231,26 @@ const Testimonials = () => {
             </div>
           </div>
           
-          {/* Navigation dots */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  activeIndex === index 
-                    ? 'bg-indigo-600 w-6' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
+          {/* Navigation dots with counter */}
+          <div className="flex flex-col items-center mt-6">
+            <div className="mb-3 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full shadow-sm">
+              <span className="font-medium text-indigo-800">{activeIndex + 1}</span>
+              <span className="text-gray-500"> / {testimonials.length}</span>
+            </div>
+            <div className="flex justify-center space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    activeIndex === index 
+                      ? 'bg-gradient-to-r from-indigo-600 to-blue-600 w-8 shadow-sm' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

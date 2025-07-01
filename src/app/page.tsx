@@ -3,7 +3,6 @@ import CategorySection from '@/components/CategorySection/CategorySection';
 import FeaturedProducts from '@/components/FeaturedProducts/FeaturedProducts';
 import Testimonials from '@/components/Testimonials/Testimonials';
 import AboutUs from '@/components/AboutUs/AboutUs';
-import Contact from '@/components/Contact/Contact';
 import Blog from '@/components/Blog/Blog';
 
 export default function Home() {
@@ -26,9 +25,6 @@ export default function Home() {
       
       {/* Blog Section */}
       <Blog />
-      
-      {/* Contact Section */}
-      <Contact />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+{/* CoreValues.tsx
 import { motion } from 'framer-motion';
 
 interface IValueCardProps {
@@ -73,3 +74,4 @@ const CoreValues = () => {
 };
 
 export default CoreValues;
+// */}

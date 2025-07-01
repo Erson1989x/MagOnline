@@ -1,8 +1,6 @@
 "use client";
 
 import CompanyDescription from "./components/CompanyDescription/CompanyDescription";
-import CompanyHistory from "./components/CompanyHistory/CompanyHistory";
-import CoreValues from "./components/CoreValues/CoreValues";
 import SectionHeader from "./components/SectionHeader/SectionHeader";
 
 const AboutUs = () => {
@@ -20,8 +18,6 @@ const AboutUs = () => {
       <div className="container mx-auto px-4">
         <SectionHeader />
         <CompanyDescription />
-        <CoreValues />
-        <CompanyHistory />
       </div>
     </section>
   );

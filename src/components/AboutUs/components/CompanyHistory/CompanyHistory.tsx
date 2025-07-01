@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+{/* CompanyHistory.tsx
+  import { motion } from 'framer-motion';
 
 interface ITimelineEvent {
     year: string;
@@ -76,4 +77,4 @@ const CompanyHistory = () => {
   );
 };
 
-export default CompanyHistory;
+export default CompanyHistory;*/}

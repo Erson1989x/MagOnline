@@ -1,3 +1,4 @@
+{/* Contact.tsx
 "use client";
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -53,11 +54,11 @@ const Contact = () => {
   
   return (
     <section className="py-16 bg-gradient-to-b from-white to-indigo-50/30 relative overflow-hidden">
-      {/* Decorative background elements */}
+      {/* Decorative background elements 
       <div className="absolute top-20 left-0 w-64 h-64 rounded-full bg-indigo-100 opacity-50 blur-3xl"></div>
       <div className="absolute bottom-20 right-0 w-80 h-80 rounded-full bg-blue-100 opacity-50 blur-3xl"></div>
       
-      {/* Decorative pattern */}
+      {/* Decorative pattern 
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-grid-indigo-500/[0.05] bg-[size:20px_20px]"></div>
       </div>
@@ -93,7 +94,7 @@ const Contact = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
-          {/* Contact Information */}
+          {/* Contact Information 
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -184,7 +185,7 @@ const Contact = () => {
             </div>
           </motion.div>
           
-          {/* Contact Form */}
+          {/* Contact Form 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -275,3 +276,4 @@ const Contact = () => {
 };
 
 export default Contact;
+*/}

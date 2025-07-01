@@ -3,6 +3,11 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import HP1 from "../../../public/HP1.png"
+import HP2 from "../../../public/HP2.png"
+import HP3 from "../../../public/HP3.png"
+import HP4 from "../../../public/HP4.png"
+
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,21 +15,28 @@ const HeroSection = () => {
     {
       title: "Partenerul tău pentru ordine, ritm și eficiență",
       description: "Descoperă produsele esențiale pentru birou, școală sau uz casnic",
-      image: "/HP 1.png",
+      image: HP1,
       cta: "Explorează produsele",
       link: "/produse"
     },
     {
       title: "Soluții complete de papetărie și birotică",
       description: "De la hârtie și instrumente de scris până la organizare și arhivare",
-      image: "/HP 2.png",
+      image: HP2,
       cta: "Vezi categoriile",
       link: "/categorii"
     },
     {
       title: "Cadouri business personalizate",
       description: "Impresionează-ți partenerii cu cadouri elegante și utile",
-      image: "/HP 3.png",
+      image: HP3,
+      cta: "Descoperă colecția",
+      link: "/cadouri"
+    },
+    {
+      title: "Cadouri business personalizate",
+      description: "Impresionează-ți partenerii cu cadouri elegante și utile",
+      image: HP4,
       cta: "Descoperă colecția",
       link: "/cadouri"
     }
@@ -156,16 +168,10 @@ const HeroSection = () => {
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-full h-full max-w-md">
-                  {/* Decorative elements */}
-                  <div className="absolute -z-10 w-full h-full">
-                    <div className="absolute top-1/4 -left-5 w-20 h-20 rounded-full bg-indigo-200/50 blur-md"></div>
-                    <div className="absolute bottom-1/3 -right-5 w-16 h-16 rounded-full bg-blue-200/50 blur-md"></div>
-                  </div>
-                  
-                  {/* Image with glow effect */}
-                  <div className="relative w-full h-full drop-shadow-2xl">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-blue-500 opacity-20 blur-xl rounded-full"></div>
-                    <div className="relative">
+                  {/* Main container with image and overlay */}
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    {/* The actual image centered in the middle */}
+                    <div className="relative w-full h-full z-10">
                       <Image
                         src={slide.image}
                         alt={slide.title}
@@ -173,6 +179,16 @@ const HeroSection = () => {
                         className="object-contain"
                         priority={index === 0}
                       />
+                    </div>
+                    
+                    {/* Decorative elements as overlay */}
+                    <div className="absolute inset-0 z-20 pointer-events-none overflow-visible">
+                      {/* Main glow effect bubble */}
+                      <div className="absolute -inset-10 bg-gradient-to-r from-indigo-500 to-blue-500 opacity-30 blur-2xl rounded-full shadow-[0_0_30px_15px_rgba(99,102,241,0.3)]"></div>
+                      
+                      {/* Additional small decorative bubbles */}
+                      <div className="absolute top-1/4 -left-5 w-20 h-20 rounded-full bg-indigo-200/50 blur-md"></div>
+                      <div className="absolute bottom-1/3 -right-5 w-16 h-16 rounded-full bg-blue-200/50 blur-md"></div>
                     </div>
                   </div>
                 </div>

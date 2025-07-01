@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import { categories } from "../Navbar/data/categories";
-import logo from "../../../public/next.svg";
+import logo from "../../../public/SIGLĂARTIMA.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -49,10 +49,10 @@ const Footer = () => {
           <div className="md:col-span-4">
             <div className="flex items-center mb-3 group">
               <div className="h-6 w-6 relative mr-2 bg-white rounded-full shadow-md overflow-hidden group-hover:shadow-lg transition-all duration-300">
-                <Image src={logo} alt="BravArt Logo" fill className="object-contain p-1" />
+                <Image src={logo} alt="BravArt Logo" fill className="object-contain" />
               </div>
               <span className="text-base font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">
-                BravArt
+                Artima
               </span>
             </div>
             
@@ -168,7 +168,7 @@ const Footer = () => {
       <div className="border-t border-indigo-100 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-gray-500 mb-1 md:mb-0">
-            © {currentYear} <span className="font-medium text-indigo-600">BravArt</span> • Toate drepturile rezervate
+            © {currentYear} <span className="font-medium text-indigo-600">Artima</span> • Toate drepturile rezervate
           </p>
           
           <div className="flex items-center gap-x-4">

@@ -19,7 +19,7 @@ const SectionHeader = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        Despre <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">BravArt</span>
+        Despre <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">Artima</span>
       </motion.h2>
       <motion.p 
         className="text-gray-600 max-w-2xl mx-auto"

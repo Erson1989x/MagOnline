@@ -16,7 +16,7 @@ const CompanyDescription = () => {
           <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-200/30 rounded-full blur-xl group-hover:bg-blue-300/40 transition-all duration-700"></div>
           <Image 
             src="/HP 1.png" 
-            alt="Despre BravArt" 
+            alt="Despre Artima" 
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
@@ -39,10 +39,10 @@ const CompanyDescription = () => {
           <span className="absolute bottom-0 left-0 w-full h-3 bg-indigo-100 -z-10"></span>
         </h3>
         <p className="text-gray-600 mb-6">
-          BravArt a fost fondată cu pasiune și dedicare pentru a oferi soluții complete de papetărie și birotică pentru afaceri și persoane fizice. Cu o experiență de peste 10 ani în domeniu, am crescut constant, adaptându-ne la nevoile în schimbare ale clienților noștri.
+          Artima a fost fondată cu pasiune și dedicare pentru a oferi soluții complete de papetărie și birotică pentru afaceri și persoane fizice. Cu o experiență de peste 10 ani în domeniu, am crescut constant, adaptându-ne la nevoile în schimbare ale clienților noștri.
         </p>
         <p className="text-gray-600 mb-6">
-          Astăzi, BravArt este recunoscut ca un furnizor de încredere pentru o gamă largă de produse esențiale, de la articole de papetărie și birotică, până la soluții personalizate pentru cadouri corporate.
+          Astăzi, Artima este recunoscut ca un furnizor de încredere pentru o gamă largă de produse esențiale, de la articole de papetărie și birotică, până la soluții personalizate pentru cadouri corporate.
         </p>
         
         <div className="border-l-4 border-indigo-600 pl-4 italic text-gray-700 mb-6 bg-gradient-to-r from-indigo-50 to-transparent py-3 rounded-r-lg">

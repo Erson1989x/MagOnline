@@ -114,7 +114,7 @@ const HeroSection = () => {
                 animate={{ opacity: currentSlide === index ? 1 : 0, y: currentSlide === index ? 0 : 20 }}
                 transition={{ delay: 0.1, duration: 0.5 }}
               >
-                BravArt Collection
+                Artima Collection
               </motion.span>
               <motion.h1 
                 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600"
@@ -184,11 +184,11 @@ const HeroSection = () => {
                     {/* Decorative elements as overlay */}
                     <div className="absolute inset-0 z-20 pointer-events-none overflow-visible">
                       {/* Main glow effect bubble */}
-                      <div className="absolute -inset-10 bg-gradient-to-r from-indigo-500 to-blue-500 opacity-30 blur-2xl rounded-full shadow-[0_0_30px_15px_rgba(99,102,241,0.3)]"></div>
+                      {/*<div className="absolute -inset-10 bg-gradient-to-r from-indigo-500 to-blue-500 opacity-30 blur-2xl rounded-full shadow-[0_0_30px_15px_rgba(99,102,241,0.3)]"></div>*/}
                       
                       {/* Additional small decorative bubbles */}
-                      <div className="absolute top-1/4 -left-5 w-20 h-20 rounded-full bg-indigo-200/50 blur-md"></div>
-                      <div className="absolute bottom-1/3 -right-5 w-16 h-16 rounded-full bg-blue-200/50 blur-md"></div>
+                     {/* <div className="absolute top-1/4 -left-5 w-20 h-20 rounded-full bg-indigo-200/50 blur-md"></div>
+                      <div className="absolute bottom-1/3 -right-5 w-16 h-16 rounded-full bg-blue-200/50 blur-md"></div>*/}
                     </div>
                   </div>
                 </div>

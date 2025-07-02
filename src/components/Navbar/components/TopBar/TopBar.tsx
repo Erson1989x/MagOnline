@@ -10,7 +10,7 @@ const TopBar = () => {
             <FiPhone size={14} /> 072 123 123
           </span>
           <span className="flex items-center gap-2 hover:text-indigo-600 transition-colors duration-200">
-            <FiMail size={14} /> contact@bravart.ro
+            <FiMail size={14} /> contact@artima.ro
           </span>
         </div>
         <div className="flex items-center space-x-3">

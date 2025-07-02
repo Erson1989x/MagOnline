@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="md:col-span-4">
             <div className="flex items-center mb-3 group">
               <div className="h-6 w-6 relative mr-2 bg-white rounded-full shadow-md overflow-hidden group-hover:shadow-lg transition-all duration-300">
-                <Image src={logo} alt="BravArt Logo" fill className="object-contain" />
+                <Image src={logo} alt="Artima Logo" fill className="object-contain" />
               </div>
               <span className="text-base font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">
                 Artima
@@ -73,7 +73,7 @@ const Footer = () => {
                 <div className="w-6 h-6 rounded-full bg-indigo-100 flex items-center justify-center mr-2 group-hover:bg-indigo-200 transition-colors">
                   <FiMail size={12} className="text-indigo-600" />
                 </div>
-                <span className="text-xs text-gray-600 group-hover:text-indigo-600 transition-colors">contact@bravart.ro</span>
+                <span className="text-xs text-gray-600 group-hover:text-indigo-600 transition-colors">contact@artima.ro</span>
               </div>
               
               <div className="flex items-center group">

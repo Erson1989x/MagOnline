@@ -11,7 +11,7 @@ const testimonials = [
     role: 'Manager Achiziții',
     company: 'Tech Solutions SRL',
     image: '/HP 1.png',
-    content: 'BravArt a devenit furnizorul nostru principal pentru toate produsele de birotică. Calitatea produselor și promptitudinea livrărilor ne-au convins să continuăm colaborarea pe termen lung.',
+    content: 'Artima a devenit furnizorul nostru principal pentru toate produsele de birotică. Calitatea produselor și promptitudinea livrărilor ne-au convins să continuăm colaborarea pe termen lung.',
     rating: 5
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     role: 'Director General',
     company: 'Ionescu & Partners',
     image: '/HP 2.png',
-    content: 'Serviciile de personalizare AI oferite de BravArt sunt extraordinare! Am comandat agende personalizate pentru toți angajații noștri și rezultatul a fost impresionant.',
+    content: 'Serviciile de personalizare AI oferite de Artima sunt extraordinare! Am comandat agende personalizate pentru toți angajații noștri și rezultatul a fost impresionant.',
     rating: 5
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
     role: 'Profesor',
     company: 'Liceul Teoretic "Ion Creangă"',
     image: '/HP 3.png',
-    content: 'Recomand cu încredere BravArt pentru rechizitele școlare. Raportul calitate-preț este excelent, iar copiii sunt încântați de produsele primite.',
+    content: 'Recomand cu încredere Artima pentru rechizitele școlare. Raportul calitate-preț este excelent, iar copiii sunt încântați de produsele primite.',
     rating: 4
   },
   {
@@ -38,7 +38,7 @@ const testimonials = [
     role: 'Antreprenor',
     company: 'Creative Studio',
     image: '/HP 4.png',
-    content: 'Am apelat la BravArt pentru cadourile corporate de final de an și am fost plăcut surprins de varietatea de opțiuni și de calitatea produselor personalizate.',
+    content: 'Am apelat la Artima pentru cadourile corporate de final de an și am fost plăcut surprins de varietatea de opțiuni și de calitatea produselor personalizate.',
     rating: 5
   },
   {
@@ -47,7 +47,7 @@ const testimonials = [
     role: 'Office Manager',
     company: 'Global Consulting',
     image: '/HP 5.png',
-    content: 'Colaborarea cu BravArt a fost mereu una plăcută. Produsele sunt livrate la timp, iar serviciul clienți este mereu prompt și amabil.',
+    content: 'Colaborarea cu Artima a fost mereu una plăcută. Produsele sunt livrate la timp, iar serviciul clienți este mereu prompt și amabil.',
     rating: 5
   }
 ];
@@ -119,7 +119,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Descoperă experiențele clienților noștri cu produsele și serviciile BravArt
+            Descoperă experiențele clienților noștri cu produsele și serviciile Artima
           </motion.p>
         </div>
         

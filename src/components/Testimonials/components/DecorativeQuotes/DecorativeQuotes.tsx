@@ -1,4 +1,3 @@
-// src/components/Testimonials/components/DecorativeQuotes/DecorativeQuotes.tsx
 const DecorativeQuotes = () => {
   return (
     <>

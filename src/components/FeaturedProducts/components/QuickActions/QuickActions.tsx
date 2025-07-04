@@ -1,4 +1,3 @@
-// components/QuickActions.tsx
 
 const QuickActions = () => {
   return (

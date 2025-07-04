@@ -1,4 +1,4 @@
-// src/components/Testimonials/components/NavigationArrows/NavigationArrows.tsx
+
 interface NavigationArrowsProps {
   onPrevClick: () => void;
   onNextClick: () => void;

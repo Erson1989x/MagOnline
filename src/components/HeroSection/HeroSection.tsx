@@ -1,4 +1,3 @@
-// src/components/HeroSection/HeroSection.tsx
 "use client";
 import { useState, useEffect } from 'react';
 import { slides } from './data/slides';

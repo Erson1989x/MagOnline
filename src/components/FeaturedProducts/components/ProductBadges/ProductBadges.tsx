@@ -1,4 +1,3 @@
-// components/ProductBadges.tsx
 
 interface Product {
   isNew: boolean;

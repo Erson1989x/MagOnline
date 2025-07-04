@@ -1,5 +1,3 @@
-// components/ProductGrid.tsx
-import { motion } from 'framer-motion';
 import ProductCard from '../ProductCard/ProductCard';
 
 interface Product {

@@ -1,4 +1,4 @@
-// src/components/Testimonials/components/TestimonialCard/TestimonialCard.tsx
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import StarRating from '../StarRating/StarRating';

@@ -1,4 +1,3 @@
-// src/components/Testimonials/Testimonials.tsx
 "use client";
 import { useState, useEffect } from 'react';
 import { testimonials } from './data/testimonials';

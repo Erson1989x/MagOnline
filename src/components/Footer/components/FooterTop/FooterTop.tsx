@@ -1,4 +1,3 @@
-// components/Footer/FooterTop.tsx
 
 import { CompanyInfo } from "../CompanyInfo/CompanyInfo";
 import { FooterLinks } from "../FooterLinks/FooterLinks";

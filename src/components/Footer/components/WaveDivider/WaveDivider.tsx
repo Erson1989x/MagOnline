@@ -1,4 +1,4 @@
-// components/Footer/WaveDivider.tsx
+
 export const WaveDivider = () => (
   <div className="w-full overflow-hidden leading-[0] rotate-180">
     <svg 

@@ -1,11 +1,11 @@
-// components/Footer/components/SocialIcon/SocialIcon.tsx
+
 interface SocialIconProps {
   social: {
     Icon: React.ElementType;
     href: string;
     hoverClass: string;
     color: string;
-    name: string; // Add name property explicitly
+    name: string;
   };
 }
 

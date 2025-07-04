@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { categories } from "./data/categories";
-// import TopBar from "./components/TopBar/TopBar";
 import Logo from "./components/Logo/Logo";
 import DesktopNavigation from "./components/DesktopNavigation/DesktopNavigation";
 import UserActions from "./components/UserActions/UserActions";

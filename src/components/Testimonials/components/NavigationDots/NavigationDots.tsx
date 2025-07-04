@@ -1,4 +1,4 @@
-// src/components/Testimonials/components/NavigationDots/NavigationDots.tsx
+
 interface NavigationDotsProps {
   testimonials: any[];
   activeIndex: number;

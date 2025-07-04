@@ -1,4 +1,3 @@
-// components/FilterTabs.tsx
 
 interface FilterTabsProps {
   tabs: { id: string; label: string }[];

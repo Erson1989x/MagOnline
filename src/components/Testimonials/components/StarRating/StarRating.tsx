@@ -1,4 +1,4 @@
-// src/components/Testimonials/components/StarRating/StarRating.tsx
+
 interface StarRatingProps {
   rating: number;
 }

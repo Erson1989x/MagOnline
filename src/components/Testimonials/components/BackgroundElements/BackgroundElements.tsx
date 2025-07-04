@@ -1,4 +1,3 @@
-// src/components/Testimonials/components/BackgroundElements/BackgroundElements.tsx
 const BackgroundElements = () => {
   return (
     <>

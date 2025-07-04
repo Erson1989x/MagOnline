@@ -1,6 +1,4 @@
-// src/components/Testimonials/components/TestimonialsCarousel/TestimonialsCarousel.tsx
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+
 import DecorativeQuotes from '../DecorativeQuotes/DecorativeQuotes';
 import TestimonialCard from '../TestimonialCard/TestimonialCard';
 import NavigationArrows from '../NavigationArrows/NavigationArrows';

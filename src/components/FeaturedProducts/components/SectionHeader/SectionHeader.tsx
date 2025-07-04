@@ -1,4 +1,4 @@
-// components/SectionHeader.tsx
+
 import { motion } from 'framer-motion';
 
 const SectionHeader = () => {

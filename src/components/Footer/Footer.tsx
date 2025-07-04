@@ -1,4 +1,4 @@
-// components/Footer/Footer.tsx
+
 "use client";
 
 import { FooterBottom } from "./components/FooterBottom/FooterBottom";

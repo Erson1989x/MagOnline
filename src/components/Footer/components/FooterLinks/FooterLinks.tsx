@@ -1,4 +1,4 @@
-// components/Footer/components/FooterLinks/FooterLinks.tsx
+
 import Link from "next/link";
 import { quickLinksData } from "./../../data/quickLinks";
 

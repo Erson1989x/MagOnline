@@ -1,4 +1,4 @@
-// components/Footer/CompanyInfo.tsx
+
 import Image from "next/image";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import logo from "../../../../../public/SIGLĂARTIMA.png";

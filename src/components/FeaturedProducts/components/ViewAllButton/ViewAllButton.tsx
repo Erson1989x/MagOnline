@@ -1,4 +1,4 @@
-// components/ViewAllButton.tsx
+
 import Link from 'next/link';
 
 const ViewAllButton = () => {

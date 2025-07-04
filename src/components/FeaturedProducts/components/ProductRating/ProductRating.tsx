@@ -1,4 +1,4 @@
-// components/ProductRating.tsx
+
 
 interface ProductRatingProps {
   rating: number;

@@ -47,8 +47,9 @@ const CategoryCard = ({
           <div 
             className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0`}
             style={{
-              background: `linear-gradient(45deg, ${hoveredCategory === category.slug ? '#6366f1, #3b82f6' : 'transparent'})`,
+              backgroundImage: `linear-gradient(45deg, ${hoveredCategory === category.slug ? '#6366f1, #3b82f6' : 'transparent'})`,
               backgroundSize: '200% 200%',
+              backgroundPosition: '0% 50%',
               animation: hoveredCategory === category.slug ? 'gradient-animation 3s ease infinite' : 'none'
             }}
           ></div>

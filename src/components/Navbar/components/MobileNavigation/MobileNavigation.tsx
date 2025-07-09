@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import CategoryDropdown from "../CategoryDropdown/CategoryDropdown";
 
 type Subcategory = {

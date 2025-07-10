@@ -1,6 +1,9 @@
+import { CategorySlug, SubcategorySlug } from '../../lib/slugTypes';
+
 export type Subcategory = {
   name: string;
-  slug: string;
+  slug: SubcategorySlug;
+  subcategories?: Subcategory[];
 };
 
 export type Category = {

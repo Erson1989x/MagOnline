@@ -202,7 +202,9 @@ const allProducts: Product[] = [
  * @param subcategorySlug Optional subcategory slug to filter by
  * @returns Array of products in the category and optionally subcategory
  */
-export const getProductsByCategory = (categorySlug: string, subcategorySlug?: string): Product[] => {
+import { CategorySlug, SubcategorySlug } from './slugTypes';
+
+export const getProductsByCategory = (categorySlug: CategorySlug, subcategorySlug?: SubcategorySlug): Product[] => {
   if (subcategorySlug) {
     return allProducts.filter(product => 
       product.category === categorySlug && product.subcategory === subcategorySlug
@@ -239,7 +241,7 @@ export const getFeaturedProducts = (limit: number = 4): Product[] => {
  * @param limit Number of products to return
  * @returns Array of related products
  */
-export const getRelatedProducts = (productId: string, categorySlug: string, limit: number = 4): Product[] => {
+export const getRelatedProducts = (productId: string, categorySlug: CategorySlug, limit: number = 4): Product[] => {
   return allProducts
     .filter(product => product.category === categorySlug && product.id !== productId)
     .slice(0, limit);

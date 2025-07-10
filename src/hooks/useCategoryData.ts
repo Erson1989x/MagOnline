@@ -1,7 +1,8 @@
 import { categories } from '@/components/Navbar/data/categories';
 import { getProductsByCategory } from '@/lib';
+import { CategorySlug, SubcategorySlug } from '@/lib/slugTypes';
 
-export function useCategoryData(slug: string, subcategorySlug?: string) {
+export function useCategoryData(slug: CategorySlug, subcategorySlug?: SubcategorySlug) {
   // Find the category from our categories data
   const category = categories.flatMap(group => group.subcategories)
     .find(cat => cat.slug === slug);

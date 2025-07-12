@@ -194,6 +194,133 @@ const allProducts: Product[] = [
     }
   },
   // Add more products for other categories if needed
+  
+  // BIROU products
+  {
+    id: 'birou-1',
+    name: 'Biblioraft DELMET A4, 75mm, albastru',
+    slug: 'biblioraft-delmet-a4-75mm-albastru',
+    description: 'Biblioraft DELMET A4, dimensiune 75mm, culoare albastru, ideal pentru organizarea documentelor.',
+    price: 15.99,
+    discount: 0,
+    image: 'https://placehold.co/400x400/3b82f6/ffffff?text=Biblioraft+DELMET',
+    images: ['https://placehold.co/400x400/3b82f6/ffffff?text=Biblioraft+DELMET'],
+    brand: 'DELMET',
+    category: 'birou',
+    subcategory: 'bibliorafturi',
+    inStock: true,
+    attributes: {
+      format: 'A4',
+      dimensiune: '75mm',
+      culoare: 'Albastru',
+      tip: 'Biblioraft',
+      brand: 'DELMET'
+    }
+  },
+  {
+    id: 'birou-2',
+    name: 'Biblioraft DELMET A4, 50mm, verde',
+    slug: 'biblioraft-delmet-a4-50mm-verde',
+    description: 'Biblioraft DELMET A4, dimensiune 50mm, culoare verde, ideal pentru organizarea documentelor.',
+    price: 12.99,
+    discount: 0,
+    image: 'https://placehold.co/400x400/22c55e/ffffff?text=Biblioraft+DELMET',
+    images: ['https://placehold.co/400x400/22c55e/ffffff?text=Biblioraft+DELMET'],
+    brand: 'DELMET',
+    category: 'birou',
+    subcategory: 'bibliorafturi',
+    inStock: true,
+    attributes: {
+      format: 'A4',
+      dimensiune: '50mm',
+      culoare: 'Verde',
+      tip: 'Biblioraft',
+      brand: 'DELMET'
+    }
+  },
+  {
+    id: 'birou-3',
+    name: 'Dosar suspendabil A4, verde, 25 buc/set',
+    slug: 'dosar-suspendabil-a4-verde-25-buc',
+    description: 'Dosar suspendabil A4, culoare verde, set de 25 bucăți, ideal pentru organizarea documentelor în dulap.',
+    price: 45.99,
+    discount: 10,
+    image: 'https://placehold.co/400x400/22c55e/ffffff?text=Dosar+Suspendabil',
+    images: ['https://placehold.co/400x400/22c55e/ffffff?text=Dosar+Suspendabil'],
+    brand: 'Office',
+    category: 'birou',
+    subcategory: 'dosare-suspendabile',
+    inStock: true,
+    attributes: {
+      format: 'A4',
+      culoare: 'Verde',
+      tip: 'Dosar suspendabil',
+      cantitate: 25,
+      material: 'Carton'
+    }
+  },
+  {
+    id: 'birou-4',
+    name: 'Separator plastic A4, 12 pozitii, multicolor',
+    slug: 'separator-plastic-a4-12-pozitii-multicolor',
+    description: 'Separator plastic A4, 12 poziții, multicolor, ideal pentru organizarea documentelor în biblioraft.',
+    price: 8.99,
+    discount: 0,
+    image: 'https://placehold.co/400x400/f59e0b/ffffff?text=Separator+Plastic',
+    images: ['https://placehold.co/400x400/f59e0b/ffffff?text=Separator+Plastic'],
+    brand: 'Office',
+    category: 'birou',
+    subcategory: 'separatoare',
+    inStock: true,
+    attributes: {
+      format: 'A4',
+      pozitii: 12,
+      culoare: 'Multicolor',
+      tip: 'Separator',
+      material: 'Plastic'
+    }
+  },
+  {
+    id: 'birou-5',
+    name: 'Etichete autoadezive A4, 70x42.3mm, 21 buc/foaie',
+    slug: 'etichete-autoadezive-a4-70x42mm-21-buc',
+    description: 'Etichete autoadezive A4, dimensiuni 70x42.3mm, 21 bucăți per foaie, ideale pentru etichetarea dosarelor.',
+    price: 12.50,
+    discount: 0,
+    image: 'https://placehold.co/400x400/e5e7eb/1f2937?text=Etichete+A4',
+    images: ['https://placehold.co/400x400/e5e7eb/1f2937?text=Etichete+A4'],
+    brand: 'Office',
+    category: 'birou',
+    subcategory: 'etichete',
+    inStock: true,
+    attributes: {
+      format: 'A4',
+      dimensiuni: '70x42.3mm',
+      tip: 'Etichete',
+      cantitate: 21,
+      adezive: 'Da'
+    }
+  },
+  {
+    id: 'birou-6',
+    name: 'Cutie arhivare A4, carton, 350x250x100mm',
+    slug: 'cutie-arhivare-a4-carton-350x250x100mm',
+    description: 'Cutie arhivare A4, din carton, dimensiuni 350x250x100mm, ideală pentru arhivarea documentelor.',
+    price: 18.99,
+    discount: 0,
+    image: 'https://placehold.co/400x400/9ca3af/ffffff?text=Cutie+Arhivare',
+    images: ['https://placehold.co/400x400/9ca3af/ffffff?text=Cutie+Arhivare'],
+    brand: 'Office',
+    category: 'birou',
+    subcategory: 'cutii-arhivare',
+    inStock: true,
+    attributes: {
+      format: 'A4',
+      dimensiuni: '350x250x100mm',
+      tip: 'Cutie arhivare',
+      material: 'Carton'
+    }
+  }
 ];
 
 /**
@@ -203,18 +330,88 @@ const allProducts: Product[] = [
  * @returns Array of products in the category and optionally subcategory
  */
 import { CategorySlug, SubcategorySlug } from './slugTypes';
+import { getProductsByCollection, convertShopifyProduct } from './shopifyApi';
 
-export const getProductsByCategory = (categorySlug: CategorySlug, subcategorySlug?: SubcategorySlug): Product[] => {
+export const getProductsByCategory = async (
+  categorySlug: CategorySlug, 
+  subcategorySlug?: SubcategorySlug
+): Promise<Product[]> => {
+  try {
+    // First, try to get products from Shopify
+    const collectionHandle = subcategorySlug 
+      ? `${categorySlug}-${subcategorySlug}`
+      : categorySlug;
+    
+    const shopifyProducts = await getProductsByCollection(collectionHandle);
+    
+    if (shopifyProducts.length > 0) {
+      // Convert Shopify products to our Product type
+      const convertedProducts = shopifyProducts.map(convertShopifyProduct);
+      return convertedProducts;
+    }
+    
+    // Fallback to local products if Shopify returns no results
+    return getLocalProductsByCategory(categorySlug, subcategorySlug);
+  } catch (error) {
+    console.error('[getProductsByCategory] Error fetching products from Shopify:', error);
+    // Fallback to local products on error
+    return getLocalProductsByCategory(categorySlug, subcategorySlug);
+  }
+};
+
+// Local fallback function (your current implementation)
+export const getLocalProductsByCategory = (
+  categorySlug: CategorySlug, 
+  subcategorySlug?: SubcategorySlug
+): Product[] => {
+  let filteredProducts: Product[];
+  
   if (subcategorySlug) {
-    return allProducts.filter(product => 
+    filteredProducts = allProducts.filter(product => 
       product.category === categorySlug && product.subcategory === subcategorySlug
     );
+  } else {
+    filteredProducts = allProducts.filter(product => product.category === categorySlug);
   }
-  return allProducts.filter(product => product.category === categorySlug);
+  
+  return filteredProducts;
 };
 
 /**
- * Get a product by its slug
+ * Get a product by its slug (searches both Shopify and local products)
+ * @param slug The product slug
+ * @returns The product or undefined if not found
+ */
+export const getProductBySlugAsync = async (slug: string): Promise<Product | undefined> => {
+  try {
+    // First, try to find the product in Shopify by searching all collections
+    const collections = ['birou', 'birou-bibliorafturi', 'hartie', 'afisare', 'instrumente-scris', 'accesorii-it', 'curatenie', 'rechizite', 'cadouri'];
+    
+    for (const collectionHandle of collections) {
+      try {
+        const shopifyProducts = await getProductsByCollection(collectionHandle);
+        const convertedProducts = shopifyProducts.map(convertShopifyProduct);
+        const product = convertedProducts.find(p => p.slug === slug);
+        if (product) {
+          return product;
+        }
+      } catch (error) {
+        // Continue to next collection if this one fails
+        continue;
+      }
+    }
+    
+    // Fallback to local products
+    return allProducts.find(product => product.slug === slug);
+  } catch (error) {
+    console.error('[getProductBySlugAsync] Error:', error);
+    // Fallback to local products
+    return allProducts.find(product => product.slug === slug);
+  }
+};
+
+/**
+ * Get a product by its slug (local products only - for compatibility)
  * @param slug The product slug
  * @returns The product or undefined if not found
  */

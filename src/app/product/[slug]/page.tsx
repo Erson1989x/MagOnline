@@ -1,18 +1,18 @@
 import { notFound } from 'next/navigation';
-import { getProductBySlug, getRelatedProducts } from '@/lib';
+import { getProductBySlugAsync, getRelatedProducts } from '@/lib';
 import Breadcrumbs from '@/components/ProductPage/Breadcrumbs';
 import ProductDetails from '@/components/ProductPage/ProductDetails';
 import RelatedProducts from '@/components/ProductPage/RelatedProducts';
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params;
-  const product = getProductBySlug(slug);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { slug } = await params;
+  const product = await getProductBySlugAsync(slug);
   
   if (!product) {
     notFound();

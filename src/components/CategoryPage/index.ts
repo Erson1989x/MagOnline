@@ -5,3 +5,4 @@ export { default as RelatedCategories } from './RelatedCategories';
 export { default as CategoryPageLayout } from './CategoryPageLayout';
 export { default as CategoryContent } from './CategoryContent';
 export { default as CategoryMainContent } from './CategoryMainContent';
+export { CategoryPageClient } from './CategoryPageClient';

@@ -17,7 +17,30 @@ export const categories = [
           { name: "Agende", slug: "agende" }
         ]
       },
-      { name: "BIROU, ORGANIZARE ȘI ARHIVARE", slug: "birou" },
+      { name: "BIROU, ORGANIZARE ȘI ARHIVARE", 
+        slug: "birou",
+        subcategories: [
+          { name: "Bibliorafturi", slug: "bibliorafturi" },
+          { name: "Separatoare", slug: "separatoare" },
+          { name: "Cutii arhivare", slug: "cutii-arhivare" },
+          { name: "Dosare plastic", slug: "dosare-plastic" },
+          { name: "Dosare carton", slug: "dosare-carton" },
+          { name: "Folii", slug: "folii" },
+          { name: "Mape cu butoni", slug: "mape-cu-butoni" },
+          { name: "Serviete", slug: "serviete" },
+          { name: "Clipboard", slug: "clipboard" },
+          { name: "Capsatoare", slug: "capsatoare" },
+          { name: "Agrafe și clipsuri", slug: "agrafe-si-clipsuri" },
+          { name: "Bandă adezivă", slug: "banda-adeziva" },
+          { name: "Lipici", slug: "lipici" },
+          { name: "Foarfece", slug: "foarfece" },
+          { name: "Ace", slug: "ace" },
+          { name: "Pionieze", slug: "pionieze" },
+          { name: "Rigle", slug: "rigle" },
+          { name: "Baterii", slug: "baterii" },
+          { name: "Accesorii îndosariere", slug: "accesorii-indosariere" }
+        ]
+      },
       { name: "AFIȘARE ȘI PREZENTARE", slug: "afisare" },
       { name: "INSTRUMENTE DE SCRIS", slug: "instrumente-scris" },
       { name: "ACCESORII IT", slug: "accesorii-it" },

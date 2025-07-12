@@ -1,17 +1,16 @@
 // pages/category/[slug].tsx
 import { notFound } from 'next/navigation';
-import { useCategoryData } from '@/hooks/useCategoryData';
-import { CategoryPageLayout } from '@/components/CategoryPage/CategoryPageLayout';
+import { CategoryPageClient } from '@/components/CategoryPage/CategoryPageClient';
 import { CategoryGroup } from '@/lib';
 import { CategorySlug, SubcategorySlug } from '@/lib/slugTypes';
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams?: {
+  }>;
+  searchParams?: Promise<{
     subcategory?: string;
-  };
+  }>;
 }
 
 // Type guard to check if a string is a valid CategorySlug
@@ -27,15 +26,22 @@ function isValidCategorySlug(slug: string): slug is CategorySlug {
 // Type guard to check if a string is a valid SubcategorySlug
 function isValidSubcategorySlug(slug: string): slug is SubcategorySlug {
   const validSlugs: SubcategorySlug[] = [
+    // Paper subcategories
     "hartie-toate-dimensiunile", "hartie-colorata", "hartie-foto",
-    "registre", "tipizate", "plicuri", "etichete", "caiete", "agende"
+    "registre", "tipizate", "plicuri", "etichete", "caiete", "agende",
+    // Birou subcategories
+    "bibliorafturi", "separatoare", "cutii-arhivare", "dosare-plastic",
+    "dosare-carton", "folii", "mape-cu-butoni", "serviete", "clipboard",
+    "capsatoare", "agrafe-si-clipsuri", "banda-adeziva", "lipici",
+    "foarfece", "ace", "pionieze", "rigle", "baterii", "accesorii-indosariere"
   ];
   return validSlugs.includes(slug as SubcategorySlug);
 }
 
-export default function CategoryPage({ params, searchParams = {} }: CategoryPageProps) {
-  const { slug } = params;
-  const { subcategory: subcategorySlug } = searchParams;
+export default async function CategoryPage({ params, searchParams }: CategoryPageProps) {
+  const { slug } = await params;
+  const resolvedSearchParams = await (searchParams || Promise.resolve({}));
+  const subcategorySlug = (resolvedSearchParams as any).subcategory;
   
   // Validate slug before using it
   if (!isValidCategorySlug(slug)) {
@@ -47,21 +53,12 @@ export default function CategoryPage({ params, searchParams = {} }: CategoryPage
     ? subcategorySlug 
     : undefined;
   
-  // Get category and subcategory data
-  const { category, subcategory, products } = useCategoryData(slug, validSubcategorySlug);
-  
-  // If category doesn't exist, return 404
-  if (!category) {
-    notFound();
-  }
-  
-  return <CategoryPageLayout 
-    category={category} 
-    subcategory={subcategory} 
-    products={products} 
-    slug={slug} 
-    subcategorySlug={subcategorySlug}
-  />;
+  return (
+    <CategoryPageClient 
+      slug={slug} 
+      subcategorySlug={validSubcategorySlug}
+    />
+  );
 }
 
 // Generate static params for all categories
